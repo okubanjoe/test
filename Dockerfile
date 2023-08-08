@@ -1,6 +1,6 @@
 FROM openjdk:17
 LABEL maintainer="test"
-ADD C:/Users/Administrator.ORNATE-TECH/Desktop/github-runner/actions-runner/_work/test/test/target/test.jar test.jar
+ADD C:\Users\Administrator.ORNATE-TECH\Desktop\github-runner\actions-runner\_work\test\test\target\test.jar test.jar
 ENV PORT 8080
 EXPOSE $PORT
 
