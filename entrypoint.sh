@@ -1,5 +1,8 @@
-#!/bin/sh -l
+counter=1
 
-echo "Hello $1"
-time=$(date)
-echo "time=$time" >> $GITHUB_OUTPUT
+while [ $counter -le 100 ]
+do
+    echo $counter
+    counter=$((counter + 1))
+    sleep 1  # Optional: add a delay between iterations
+done
