@@ -1,0 +1,26 @@
+version: "3"
+volumes:
+  ornate-volume:
+
+services:
+  ornate-api-gateway:
+    container_name: test-local
+    image: test
+    environment:
+      - JAVA_OPTS=
+        -EUREKA_SERVER=http://naming-server:8761/eureka
+        -ZIPKIN_SERVER=http://zipkin:9411/
+        -SPRING_ACTIVE_PROFILES=local
+    ports:
+      - "1001:8080"
+    #   links:
+    #     - zipkin
+    command: --spring.profiles.active=local
+    networks:
+      - ornate-network
+
+networks:
+  ornate-network:
+    external: true
+
+
