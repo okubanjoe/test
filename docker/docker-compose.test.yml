@@ -3,7 +3,7 @@ volumes:
   ornate-volume:
 
 services:
-  ornate-api-gateway:
+  test:
     container_name: test-local
     image: test
     environment:
