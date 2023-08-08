@@ -1,6 +1,6 @@
 FROM openjdk:17
 LABEL maintainer="test"
-ADD test/target/test.jar test.jar
+ADD test.jar test.jar
 ENV PORT 8080
 EXPOSE $PORT
 
