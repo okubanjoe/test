@@ -61,3 +61,5 @@ jobs:
           docker build -t test .
           docker tag test registry.gitlab.com/ornate-tech/test
           docker push registry.gitlab.com/ornate-tech/test
+          docker compose -f docker/docker-compose.test.yml -p test up -d
+          
