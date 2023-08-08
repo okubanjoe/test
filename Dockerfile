@@ -11,7 +11,7 @@
 ## Code file to execute when the docker container starts up (`entrypoint.sh`)
 ##ENTRYPOINT ["/entrypoint.sh"]
 #ENTRYPOINT ["java","-jar","/test.jar"]
-FROM openjdk:8-jdk-alpine
+FROM openjdk:17
 
 WORKDIR /app
 COPY target/*.jar test.jar
