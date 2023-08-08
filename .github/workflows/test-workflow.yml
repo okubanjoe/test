@@ -30,8 +30,8 @@ jobs:
 
       - name: Build and push
         run:
-          docker build -t  registry.gitlab.com/ornate-tech/test .
-          docker tag latest
+          docker build -t  test .
+          docker tag test registry.gitlab.com/ornate-tech/test
           docker push registry.gitlab.com/ornate-tech/test
 #        uses: docker/build-push-action@v4
 #        with:
