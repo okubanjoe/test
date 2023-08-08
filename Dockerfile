@@ -1,7 +1,7 @@
 FROM openjdk:17
 LABEL maintainer="test"
-RUN mkdir -p /tmp/buildkit-mount721549256/target
-ADD target/test.jar test.jar
+COPY /Users/Administrator.ORNATE-TECH/Desktop/github-runner/actions-runner/_work/test/test/target/test.jar test.jar
+#ADD target/test.jar test.jar
 ENV PORT 8080
 EXPOSE $PORT
 
