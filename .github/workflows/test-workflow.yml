@@ -52,14 +52,13 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-
     steps:
-      - name: Setup Java
-          uses: actions/setup-java@v3
-          with:
-            java-version: 17
-            distribution: 'adopt'
       - uses: actions/checkout@v2
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'adopt'
       - name: Build and test
         run: mvn clean package
       - name: Build Docker image
