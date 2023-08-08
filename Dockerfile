@@ -11,7 +11,9 @@
 ## Code file to execute when the docker container starts up (`entrypoint.sh`)
 ##ENTRYPOINT ["/entrypoint.sh"]
 #ENTRYPOINT ["java","-jar","/test.jar"]
-FROM openjdk:17
-EXPOSE 8080
-ADD target/test.jar test.jar
-ENTRYPOINT ["java","-jar","/test.jar"]
+FROM openjdk:8-jdk-alpine
+
+WORKDIR /app
+COPY target/*.jar test.jar
+
+ENTRYPOINT ["java","-jar","/app/test.jar"]
