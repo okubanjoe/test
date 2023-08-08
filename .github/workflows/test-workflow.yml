@@ -1,46 +1,63 @@
-name: Test Only
-
+#name: Test Only
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#      - master
+#
+#jobs:
+#  build:
+#    runs-on: self-hosted
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Setup Java
+#        uses: actions/setup-java@v3
+#        with:
+#          java-version: 17
+#          distribution: 'adopt'
+#
+#      - name: Build with Maven
+#        run: mvn clean install package
+#
+#      - name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v2
+#
+##      - name: Build Image
+##        run: docker build -t registry.gitlab.com/ornate-tech/test .
+#
+#      - name: Build and push
+#        run:
+#          docker build -t  test .
+#          docker tag test registry.gitlab.com/ornate-tech/test
+#          docker push registry.gitlab.com/ornate-tech/test
+##        uses: docker/build-push-action@v4
+##        with:
+##          image: registry.gitlab.com/ornate-tech/test
+##          tags: latest
+##          registry: registry.gitlab.com
+##          dockerfile: Dockerfile
+##          username: ${{ secrets.DOCKER_USERNAME }}
+##          password: ${{ secrets.DOCKER_PASSWORD }}
+#
+##      - name: All the Tests and Coverage check
+##        run: mvn clean verify
 on:
   push:
     branches:
-      - main
       - master
 
 jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: 17
-          distribution: 'adopt'
-
-      - name: Build with Maven
-        run: mvn clean install package
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-#      - name: Build Image
-#        run: docker build -t registry.gitlab.com/ornate-tech/test .
-
-      - name: Build and push
-        run:
-          docker build -t  test .
+      - uses: actions/checkout@v2
+      - name: Build and test
+        run: ./mvnw clean package
+      - name: Build Docker image
+        run: |
+          docker build -t test .
           docker tag test registry.gitlab.com/ornate-tech/test
           docker push registry.gitlab.com/ornate-tech/test
-#        uses: docker/build-push-action@v4
-#        with:
-#          image: registry.gitlab.com/ornate-tech/test
-#          tags: latest
-#          registry: registry.gitlab.com
-#          dockerfile: Dockerfile
-#          username: ${{ secrets.DOCKER_USERNAME }}
-#          password: ${{ secrets.DOCKER_PASSWORD }}
-
-#      - name: All the Tests and Coverage check
-#        run: mvn clean verify
