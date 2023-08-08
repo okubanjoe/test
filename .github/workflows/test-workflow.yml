@@ -34,7 +34,7 @@ jobs:
           image: registry.gitlab.com/ornate-tech/test
           tags: latest
           registry: registry.gitlab.com
-          dockerfile: Dockerfile
+          dockerfile: docker/docker-compose.test.yml
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
