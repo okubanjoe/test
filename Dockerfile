@@ -1,5 +1,6 @@
 FROM openjdk:17
 LABEL maintainer="test"
+RUN mkdir -p /tmp/buildkit-mount721549256/target
 ADD target/test.jar test.jar
 ENV PORT 8080
 EXPOSE $PORT
