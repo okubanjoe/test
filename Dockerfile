@@ -6,7 +6,7 @@ ENV PORT 8080
 EXPOSE $PORT
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /app
 #
 ## Code file to execute when the docker container starts up (`entrypoint.sh`)
 CMD ["bash","entrypoint.sh"]
