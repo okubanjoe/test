@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build and test
-        run: ./mvnw clean package
+        run: mvn clean package
       - name: Build Docker image
         run: |
           docker build -t test .
