@@ -26,14 +26,17 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+        run: docker build -t my-image:${{ github.ref_name }} .
 
       - name: Build and push
         uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: test:"${{ github.ref_name }}"
+        run: docker push my-image:${{ github.ref_name }}
+
+#        with:
+#          context: .
+#          file: ./Dockerfile
+#          push: true
+#          tags: test:"${{ github.ref_name }}"
 
       - name: All the Tests and Coverage check
         run: mvn clean verify
