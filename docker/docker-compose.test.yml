@@ -5,7 +5,7 @@ volumes:
 services:
   test:
     container_name: test-local
-    image: test
+    image: registry.gitlab.com/ornate-tech/test
     environment:
       - JAVA_OPTS=
         -EUREKA_SERVER=http://naming-server:8761/eureka
