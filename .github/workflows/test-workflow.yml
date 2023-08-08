@@ -33,7 +33,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: "${{ github.ref_name }}"-test:latest
+          tags: "${{ github.ref_name }}"-test
 
       - name: All the Tests and Coverage check
         run: mvn clean verify
