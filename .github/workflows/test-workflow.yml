@@ -27,11 +27,7 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: test:latest
+        run: docker compose -f docker/docker-compose.test.yml -p test up -d
 
       - name: All the Tests and Coverage check
         run: mvn clean verify
