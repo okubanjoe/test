@@ -6,7 +6,6 @@ on:
       - main
       - master
 jobs:
-  run-all-tests:
     runs-on: self-hosted
     step:
       - name: Checkout
