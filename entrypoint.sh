@@ -1,8 +1,14 @@
+#!/bin/bash
+
+# Set the initial value of the counter
 counter=1
 
-while [ $counter -le 100 ]
-do
-    echo $counter
-    counter=$((counter + 1))
-    sleep 1  # Optional: add a delay between iterations
+while [ "$counter" -le 10 ]; do
+
+  # Print the value of the counter
+  echo "$counter"
+
+  # Increment the counter
+  counter=$((counter + 1))
+
 done

@@ -1,7 +1,6 @@
 FROM openjdk:17
 LABEL maintainer="test"
 WORKDIR /app
-RUN apt-get update && apt-get install -y dos2unix
 COPY target/*.jar test.jar
 ENV PORT 8080
 EXPOSE $PORT
