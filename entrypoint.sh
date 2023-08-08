@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Set the initial value of the counter
-counter=1
-while [ "${counter}" -le 10 ]; do
-  echo "${counter}"
-  counter=$((counter + 1))
+for i in hello 1 * 2 goodbye
+do
+  echo "Looping ... i is set to $i"
 done
