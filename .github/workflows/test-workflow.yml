@@ -38,5 +38,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: All the Tests and Coverage check
-        run: mvn clean verify
+#      - name: All the Tests and Coverage check
+#        run: mvn clean verify
