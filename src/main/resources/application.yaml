@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    vault:
+      kv:
+        application-name: test
+        enabled: true
+        backend: test
+      authentication: token
+      token: hvs.AuQpEy6jMjQ9DIAXOF7UUT9x
+      scheme: http
+      host: 10.2.0.2
+      port: 8200
