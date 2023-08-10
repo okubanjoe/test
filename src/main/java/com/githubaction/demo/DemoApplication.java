@@ -24,20 +24,20 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		System.out.println();
+//		System.out.println();
 	}
 
-	@Autowired
-	Optional<BuildProperties> buildProperties;
+//	@Autowired
+//	Optional<BuildProperties> buildProperties;
 
-	@Bean
-	public String getSecret() {
-		VaultResponse response = vaultTemplate.read("secret/application");
-		response.getData().forEach((key, value) -> {
-			System.out.println("Key: " + key + ", Value: " + value);
-			System.out.println("buildProperties: " + buildProperties.get().getName());
-		});
-		return response.toString();
-	}
+//	@Bean
+//	public String getSecret() {
+//		VaultResponse response = vaultTemplate.read("secret/application");
+//		response.getData().forEach((key, value) -> {
+//			System.out.println("Key: " + key + ", Value: " + value);
+//			System.out.println("buildProperties: " + buildProperties.get().getName());
+//		});
+//		return response.toString();
+//	}
 
 }
