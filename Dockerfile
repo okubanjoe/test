@@ -1,7 +1,7 @@
 FROM openjdk:17
 LABEL maintainer="test"
 WORKDIR /app
-COPY target/*.jar test.jar
+COPY target/*.jar /app/test.jar
 ENV PORT 8080
 EXPOSE $PORT
 
